@@ -1,0 +1,576 @@
+/*
+Item name: Menuzord - Responsive Megamenu
+Author: marcoarib - marco.arib@gmail.com
+License: http://codecanyon.net/licenses
+*/
+
+/*
+	CONTENTS:
+	
+	 1 - MENU CONTAINER
+		- Scrollable menu
+	 2 - BRAND
+	 3 - MENU
+		- Right alignment
+		- Menu items
+		- Active/hover state
+	 4 - DROPDOWN
+		- Dropdown items
+		- Hover state
+		- Dropdown left alignment
+	 5 - DROPDOWN/MEGAMENU INDICATORS
+	 6 - MEGAMENU
+	 7 - MEGAMENU WIDTHS
+		- Half width
+		- Quarter width
+	 8 - GRID SYSTEM
+	 9 - SHOW/HIDE BUTTON (MOBILE MODE)
+		- Icon
+	10 - ICONS (parent menu items)
+	11 - SEARCH FIELD
+		- Form
+		- Input
+	12 - VERTICAL TABS
+	13 - COLOR SCHEMES
+	14 - MOBILE MODE (RESPONSIVE MODE)
+		- Menu container
+		- Brand
+		- Show/hide button
+		- Menu
+		- Dropdown
+		- Dropdown items
+		- Dropdown/megamenu indicators
+		- Megamenu
+		- Search field
+*/
+
+/* FONT
+======================================*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+
+/* 1 - MENU CONTAINER
+======================================*/
+.menuzord,
+.menuzord *{
+	font-family: 'Open Sans', sans-serif;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; 
+	-webkit-box-sizing:border-box;
+}
+.menuzord{
+	width: 100%;
+	padding: 0 30px;
+	float: left;
+	position: relative;
+	background: #fff;
+}
+.menuzord a{
+	-o-transition: color .3s linear, background .3s linear;
+	-moz-transition: color .3s linear, background .3s linear;
+	-webkit-transition: color .3s linear, background .3s linear;
+	transition: color .3s linear, background .3s linear;
+}
+/* scrollable menu */
+.menuzord-menu.scrollable > .scrollable-fix{
+	display: none;
+}
+
+/* 2 - BRAND
+======================================*/
+.menuzord-brand{
+	margin: 18px 30px 0 0;
+	float: left;
+	color: #666;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.3;
+	cursor: pointer;
+}
+
+/* 3 - MENU
+======================================*/
+.menuzord-menu{
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+/* Right alignment */
+.menuzord-menu.menuzord-right{
+	float: right;
+}
+/* Menu items */
+.menuzord-menu > li{
+	display: inline-block;
+	float: left;
+}
+.menuzord-menu > li > a{
+	padding: 26px 16px;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 600;
+	color: #888;
+	outline: 0;
+	line-height: 1.42857143;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+/* Active/hover state (Menu items) */
+.menuzord-menu > li.active > a,
+.menuzord-menu > li:hover > a{
+	color: #333;
+}
+
+/* 4 - DROPDOWN
+======================================*/
+.menuzord-menu ul.dropdown,
+.menuzord-menu ul.dropdown li ul.dropdown{
+	list-style: none;
+    margin: 0;
+    padding: 0;   
+	display: none;
+    position: absolute;
+    z-index: 99;
+	min-width: 180px;
+	white-space: nowrap;
+	background: #fff;
+}
+.menuzord-menu ul.dropdown li ul.dropdown{
+    left: 100%;
+}
+/* Dropdown items */
+.menuzord-menu ul.dropdown li{
+	clear: both;
+	width: 100%;
+	border: 0 none;
+	font-size: 12px;
+	position: relative;
+}
+.menuzord-menu ul.dropdown li a{
+	width: 100%;
+	background: none;
+	padding: 10px 25px 10px 22px;
+	color: #888;
+	text-decoration: none;
+	display: inline-block;
+	float: left;
+	clear: both;
+	position: relative;
+	outline: 0;
+	-o-transition: padding .2s linear;
+	-moz-transition: padding .2s linear;
+	-webkit-transition: padding .2s linear;
+	transition: padding .2s linear;
+}
+/* Hover state (dropdown items) */
+.menuzord-menu ul.dropdown li:hover > a{
+
+
+}
+
+/* Dropdown left alignment */
+.menuzord-menu ul.dropdown.dropdown-left{
+	left: none;
+}
+.menuzord-menu ul.dropdown li ul.dropdown.dropdown-left{
+	left: -100%;
+}
+
+/* 5 - DROPDOWN/MEGAMENU INDICATORS
+======================================*/
+.menuzord-menu li .indicator{
+	margin-left: 3px;
+}
+.menuzord-menu li ul.dropdown li .indicator{
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	font-size: 15px;
+}
+
+/* 6 - MEGAMENU
+======================================*/
+.menuzord-menu > li > .megamenu{
+	width: 100%;
+	padding: 20px 30px;
+	left: 0;
+	position: absolute;
+	display: none;
+	z-index: 99;
+	border-top: solid 1px #f0f0f0;
+	background: #fff;
+}
+
+/* 7 - MEGAMENU WIDTHS
+======================================*/
+/* Half width */
+.menuzord-menu > li > .megamenu.megamenu-half-width{
+	width: 50%;
+	left: auto;
+}
+/* Quarter width */
+.menuzord-menu > li > .megamenu.megamenu-quarter-width{
+	width: 25%;
+	left: auto;
+}
+
+/* 8 - GRID SYSTEM
+======================================*/
+.menuzord-menu > li > .megamenu .megamenu-row{
+	width: 100%;
+	margin-top: 15px;
+}
+.menuzord-menu > li > .megamenu .megamenu-row:first-child {
+	margin-top: 0;
+}
+.menuzord-menu > li > .megamenu .megamenu-row:before,
+.menuzord-menu > li > .megamenu .megamenu-row:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.menuzord-menu > li > .megamenu .megamenu-row:after {
+	clear: both;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col1,
+.menuzord-menu > li > .megamenu .megamenu-row .col2,
+.menuzord-menu > li > .megamenu .megamenu-row .col3,
+.menuzord-menu > li > .megamenu .megamenu-row .col4,
+.menuzord-menu > li > .megamenu .megamenu-row .col5,
+.menuzord-menu > li > .megamenu .megamenu-row .col6,
+.menuzord-menu > li > .megamenu .megamenu-row .col7,
+.menuzord-menu > li > .megamenu .megamenu-row .col8,
+.menuzord-menu > li > .megamenu .megamenu-row .col9,
+.menuzord-menu > li > .megamenu .megamenu-row .col10,
+.menuzord-menu > li > .megamenu .megamenu-row .col11,
+.menuzord-menu > li > .megamenu .megamenu-row .col12{
+	display: block;
+	min-height: 20px;
+	float: left;
+	margin-left: 3%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row [class*="col"]:first-child {
+	margin-left: 0;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col1{
+	width: 5.583333333333%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col2{
+	width: 14.166666666666%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col3{
+	width: 22.75%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col4{
+	width: 31.333333333333%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col5{
+	width: 39.916666666667%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col6{
+	width: 48.5%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col7{
+	width: 57.083333333333%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col8{
+	width: 65.666666666667%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col9{
+	width: 74.25%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col10{
+	width: 82.833333333334%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col11{
+	width: 91.416666666667%;
+}
+.menuzord-menu > li > .megamenu .megamenu-row .col12{
+	width: 100%;
+}
+
+/* 9 - SHOW/HIDE BUTTON (MOBILE MODE)
+======================================*/
+.menuzord .showhide{
+	width: 60px;
+	height: 46px;
+	padding: 13px 0 0;
+	display: none;
+	float: right;
+	text-decoration: none;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+/* Show/hide button icon */
+.menuzord .showhide em{
+	width: 25px;
+	height: 4px;
+	margin: 5.5px 20px 0;
+	float: right;
+	background: #AFAFAF;
+}
+
+/* 10 - ICONS (parent menu items)
+======================================*/
+.menuzord-menu > li > a > i{
+	margin: 0 5px 0 0;
+	font-size: 18px;
+	float: left;
+	line-height: 20px;
+	font-family: 'FontAwesome';
+}
+
+/* 11 - SEARCH FIELD
+======================================*/
+/* Form */
+.menuzord-menu > li.search form{
+	float: left;
+	padding: 22px 16px 17px;
+}
+/* Input */
+.menuzord-menu > li.search form input[type="text"]{
+	width: 160px;
+	padding: 5px 10px;
+	font-family: 'Open Sans', sans-serif;
+	border: none;
+	background: #f0f0f0;
+	border-radius: 2px;
+	outline: 0;
+	-o-transition: width 1s ease-out;
+	-moz-transition: width 1s ease-out;
+	-webkit-transition: width 1s ease-out;
+	transition: width 1s ease-out;
+}
+.menuzord-menu > li.search form:hover input[type="text"]{
+	width: 160px;
+}
+
+/* 12 - VERTICAL TABS
+======================================*/
+.menuzord-tabs{
+	width: 100%;
+	float: left;
+}
+.menuzord-tabs-nav{
+	width: 20%;
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+}
+.menuzord-tabs-nav > li > a{
+	width: 100%;
+	padding: 7px 16px;
+	float: left;
+	font-size: 13px;
+	text-decoration: none;
+	color: #666;
+	border: solid 1px #f0f0f0;
+	outline: 0;
+}
+.menuzord-tabs-nav li.active a,
+.menuzord-tabs-nav li:hover a{
+	background: #f0f0f0;
+}
+.menuzord-tabs-content{
+	width: 80%;
+	min-height: 30px;
+	padding: 20px;
+	float: right;
+	display: none;
+	font-size: 13px;
+	border: solid 1px #f0f0f0;
+}
+.menuzord-tabs-content.active{
+	display: block;
+}
+
+/* 13 - COLOR SCHEMES
+======================================*/
+/* blue */
+.menuzord.blue .menuzord-menu > li.active > a, 
+.menuzord.blue .menuzord-menu > li:hover > a, 
+.menuzord.blue .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #4A89DC; 
+}
+/* green */
+.menuzord.green .menuzord-menu > li.active > a, 
+.menuzord.green .menuzord-menu > li:hover > a, 
+.menuzord.green .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #37BC9B; 
+}
+/* red */
+.menuzord.red .menuzord-menu > li.active > a, 
+.menuzord.red .menuzord-menu > li:hover > a, 
+.menuzord.red .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #E9573F; 
+}
+/* orange */
+.menuzord.orange .menuzord-menu > li.active > a, 
+.menuzord.orange .menuzord-menu > li:hover > a, 
+.menuzord.orange .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #ff670f; 
+}
+/* yellow */
+.menuzord.yellow .menuzord-menu > li.active > a, 
+.menuzord.yellow .menuzord-menu > li:hover > a, 
+.menuzord.yellow .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #F6BB42; 
+}
+/* purple */
+.menuzord.purple .menuzord-menu > li.active > a, 
+.menuzord.purple .menuzord-menu > li:hover > a, 
+.menuzord.purple .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #967ADC; 
+}
+/* pink */
+.menuzord.pink .menuzord-menu > li.active > a, 
+.menuzord.pink .menuzord-menu > li:hover > a, 
+.menuzord.pink .menuzord-menu ul.dropdown li:hover > a{ 
+	color: #D770AD; 
+}
+
+/* 14 - MOBILE MODE (RESPONSIVE MODE)
+======================================*/
+@media (max-width: 768px){
+	/* Responsive menu container */
+	.menuzord-responsive.menuzord{
+		padding: 0;
+	}
+	
+	/* Brand */
+	.menuzord-responsive .menuzord-brand{
+		margin: 8px 30px 10px 20px;
+		font-size: 20px;
+		line-height: 1.55;
+	}
+	
+	/* Show/hide button */
+	.menuzord-responsive .showhide{
+		margin: 0;
+	}
+	
+	/* Menu */
+	.menuzord-responsive .menuzord-menu{
+		width: 100%;
+		float: left !important;
+	}
+	/* scrollable menu*/
+	.menuzord-responsive .menuzord-menu.scrollable{
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+	.menuzord-responsive .menuzord-menu.scrollable > .scrollable-fix{
+		display: block;
+	}
+	
+	/* Menu items */
+	.menuzord-responsive .menuzord-menu > li{
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+	.menuzord-responsive .menuzord-menu > li > a{
+		width: 100%;
+		padding: 12px 20px!important;
+		display: block;
+		border-bottom: solid 1px #f0f0f0;
+		background:#fff;
+		 color:#000!important;
+	}
+	.menuzord-responsive .menuzord-menu > li:first-child > a{
+		border-top: solid 1px #f0f0f0;
+	}
+	
+	/* Dropdown */
+	.menuzord-responsive .menuzord-menu ul.dropdown,
+	.menuzord-responsive .menuzord-menu ul.dropdown li ul.dropdown{
+		width: 100%;
+		left: 0;
+		position: static;
+		border: none;
+		background: #fff;
+		float: left;
+	}
+	
+	/* Dropdown items */
+	.menuzord-responsive .menuzord-menu ul.dropdown li{
+		position: relative;
+	}
+	.menuzord-responsive .menuzord-menu ul.dropdown li a{
+		border-bottom: solid 1px #f0f0f0;
+	}
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > a{ padding-left: 40px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li > a{ padding-left: 60px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li > ul.dropdown > li > a{ padding-left: 80px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li:hover > a{ padding-left: 50px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li:hover > a{ padding-left: 70px !important; }
+	.menuzord-responsive .menuzord-menu.menuzord-indented > li > ul.dropdown > li > ul.dropdown > li > ul.dropdown > li:hover > a{ padding-left: 90px !important; }
+	
+	/* Dropdown/megamenu indicators */
+	.menuzord-responsive .menuzord-menu li .indicator{		
+		width: 60px;
+		height: 45px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 22px;
+		text-align: center;
+		line-height: 43px;
+		border-left: solid 1px #f5f5f5;
+	}
+	.menuzord-responsive .menuzord-menu li ul.dropdown li .indicator{
+		height: 38px;
+		right: 0;
+		top: 0;
+		font-size: 18px;
+		line-height: 36px;
+	}
+	
+	/* Megamenu */
+	.menuzord-responsive .menuzord-menu > li > .megamenu{
+		width: 100% !important;
+		left: 0 !important;
+		position: static;
+		border-top: none;
+		border-bottom: solid 1px #f0f0f0;
+	}
+	.menuzord-responsive .menuzord-menu > li > .megamenu .megamenu-row [class*="col"]{
+		float: none;
+		display: block;
+		width: 100% !important;
+		margin-left: 0;
+		margin-top: 15px;
+	}
+	.menuzord-responsive .menuzord-menu > li > .megamenu .megamenu-row:first-child  [class*="col"]:first-child {
+		margin-top: 0;
+		 background:#fff;
+	}
+	.menuzord-responsive .menuzord-menu > li > .megamenu .megamenu-row{
+		margin-top: 0;
+		 background:#fff;
+	}
+	
+	/* Search field */
+	.menuzord-responsive .menuzord-menu > li.search form{
+		width: 100%;
+		margin: 4px 0;
+		padding: 10px 16px !important;
+	}
+	.menuzord-responsive .menuzord-menu > li.search form input[type="text"]{
+		width: 100%;
+	}
+	
+	/* Tabs */
+	.menuzord-responsive .menuzord-tabs-nav{
+		width: 100%;
+	}
+	.menuzord-responsive .menuzord-tabs-content{
+		width: 100%;
+	}
+}
+

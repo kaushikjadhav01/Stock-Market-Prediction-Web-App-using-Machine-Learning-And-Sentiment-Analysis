@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JKS</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicons -->
+<link rel="shortcut icon" sizes="16x16" href="{{ url_for('static', filename='logo-2.png') }}"/>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='bootstrap.css') }}">
+
+<!-- Fonts -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='font-awesome.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='simple-line-icons.css') }}" media="screen" />
+<link rel="stylesheet" href="{{ url_for('static', filename='et-line-font.css') }}">
+
+<!-- MENU CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='menuzord.css') }}">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Responsive -->
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='responsive.css') }}">
+
+<!-- Animate.min -->
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='animate.min.css') }}">
+</head>
+
+<body>
+
+<!--preloader start-->
+
+<!--preloader end--> 
+
+<!-- Nav Bar-->
+
+<nav class="navbar-fixed-top transparrent-bg">
+  <div class="container">
+    <div id="menuzord" class="menuzord red"> <a href="http://localhost/wordpress/" class="menuzord-brand"><img src="{{url_for('static', filename='logo-2.png')}}" />
+
+</a>
+      <ul class="menuzord-menu mp_menu">
+        <li class="active"><a href="http://localhost/wordpress/">HOME</a>
+        </li>
+        <li><a href="http://localhost/wordpress/dashboard">DASHBOARD</a>
+          
+        </li>
+        <li><a href="#">ABOUT</a>
+          
+        </li>
+        <li><a href="http://localhost/wordpress/currency-converter/">CURRENCY CONVERTER</a>
+
+        </li>
+        <li><a href="http://localhost/wordpress#contact">CONTACT US</a>
+          
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- END Nav Bar --> 
+
+<!-- Header -->
+<div id="home" class="bg-inner low-back-gradient-inner">
+  <div class="text-con-inner low-back-up">
+    <div class="container">
+      <div style="padding-top: 40px" class="row">
+        <div class="lead col-lg-12 col-xm-12 text-center">
+          <h1><span class="top-heading-inner">PREDICT THE FUTURE</span> </h1>
+          <div class="list-o-i white">
+            <p class="white no-p"></p>
+            <div class="pagenation_links"><a href="index.html" class="yellow"><br></a><i> </i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ENd Header --> 
+
+<!-- Login  -->
+<div class="login_page login_solid_bg">
+  <div class="container">
+    <div class="log_in_logo text-center"> <img style="height: 250px" src="{{url_for('static', filename='tile7.png')}}" </div>
+    <div class="log_in_box">
+      <form class="login" action = "{{ url_for('insertintotable') }}" method = "POST">
+        <div class="login_title">
+          <h2>PLEASE ENTER A STOCK SYMBOL</h2>{% if not_found %}
+          <div class="alert alert-danger" style="color: red;" role="alert">
+  Stock Symbol (Ticker) Not Found. Please Enter a Valid Stock Symbol
+</div>
+          {% endif %}
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name = "nm" placeholder="Company Stock Symbol">
+
+        </div>
+        <div class="form-group">
+          
+        </div>
+        <div class="form-group">
+          <button class="btn btn-login">PREDICT THE FUTURE</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End Lgin  --> 
+
+<!-- Demo Heading -->
+
+<div class="main-area top-download text-center ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <p class="top-btn-text"> </p>
+      </div>
+      <div class="col-md-4 btn-ma"> </div>
+    </div>
+  </div>
+</div>
+
+<!-- END Demo Heading --> 
+
+<!-- Footer Start  -->
+
+<div class="footer-section-area padding-top-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"><img  src="{{url_for('static', filename='logo-2.png')}}"</a>
+        <p class="white">JKS was started with a common goal of serving the finance community while they make transitions. All our team members bring to table their unique expertise and experience of stock market which they would like to pass on to future investors.</p>
+        
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="title">
+          <h3>Contact Us</h3>
+        </div>
+        <div class="popular-post">
+         <ul>
+          <li><a href="#"> <i class="fa fa-map-marker fa-2x"></i>
+JKS, Office 206, Hubtown Solaris, Prof. NS Phadke Road,
+Churchgate (E) Mumbai, Maharashtra, India </a></li>
+          <li><a href="#"><i class="fa fa-envelope-o fa-2x"></i>info.bom@jks.com</a></li>
+          <li><a href="#"><i class="fa fa-phone fa-2x"></i>+91 98 19384052</a></li>
+        </ul>
+
+
+         
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="title">
+          <h3>Quick Links</h3>
+        </div>
+        <div class="information">
+          <ul>
+            <li><a href="http://localhost/wordpress/"> <i class="fa fa-arrow-right"></i> HOME</a></li>
+            <li><a href="http://localhost/wordpress/dashboard"> <i class="fa fa-arrow-right"></i> DASHBOARD</a></li>
+            <li><a href="#"> <i class="fa fa-arrow-right"></i> ABOUT</a></li>
+            <li><a href="http://localhost/wordpress/currency-converter/"> <i class="fa fa-arrow-right"></i> CURRENCY CONVERTER</a></li>
+            <li><a href="http://localhost/wordpress#contact"> <i class="fa fa-arrow-right"></i> CONTACT US</a></li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="title">
+          <h3>LOCATION</h3>
+        </div>
+        <div class="our-service">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d60383.60024757153!2d72.8317!3d18.9325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x65cbb9c5d81e88aa!2sJKS%20Wealth%20Management%20Pvt.%20Ltd!5e0!3m2!1sen!2sus!4v1571992752493!5m2!1sen!2sus" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="false"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Footer --> 
+
+<!-- Copyright Start  -->
+
+<div class="copy-right-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="copy-right">
+          <p></p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="social-media">
+          <ul>
+            <li><a href="index2.html#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="index2.html#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="index2.html#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="index2.html#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <li><a href="index2.html#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+            <li><a href="index2.html#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Copyright --> 
+
+<!--Contact Popup-->
+
+<div class="modal fade pop-box" id="donate-popup" tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"> 
+      <!--Donation div-->
+      <div class="donation-div">
+        <div class="donation-plz">
+          <form method="post" action="contact.html">
+            
+            <!--Form Portlet--> 
+            
+            <!--Form Portlet-->
+            <div class="form-portlet">
+              <h4>Consultaion Information</h4>
+              <div class="row clearfix">
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">First Name <span class="required">*</span></div>
+                  <input type="text" name="name" value="" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">Last Name <span class="required">*</span></div>
+                  <input type="text" name="name" value="" placeholder="Last Name" required>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">Email <span class="required">*</span></div>
+                  <input type="email" name="name" value="" placeholder="Email" required>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">Phone <span class="required">*</span></div>
+                  <input type="text" name="name" value="" placeholder="Phone" required>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">Address 1 <span class="required">*</span></div>
+                  <input type="text" name="name" value="" placeholder="Address 1" required>
+                </div>
+                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                  <div class="field-label">Address 2 <span class="required">*</span></div>
+                  <input type="text" name="name" value="" placeholder="Address 2" required>
+                </div>
+              </div>
+            </div>
+            <br>
+            
+            <!--Form Portlet-->
+            
+            <div class="text-left">
+              <button type="submit" class="theme-btn btn-style-two">Send Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- /.modal-content --> 
+  </div>
+  <!-- /.modal-dialog --> 
+</div>
+
+<!-- END Donate Popup--> 
+
+<!-- Back to Top --> 
+<a href="#" id="back-to-top" title="Back to top"><img src="{{url_for('static', filename='top-arrow.png')}}"</a> 
+
+<!-- js file  --> 
+<script type="text/javascript" src="{{url_for('static', filename='jquery.min.js')}}"></script> 
+
+<!-- Bootstrap JS  --> 
+<script type="text/javascript" src="{{url_for('static', filename='bootstrap.js')}}"></script> 
+
+<!-- Menu JS  --> 
+<script type="text/javascript" src="{{url_for('static', filename='menuzord.js')}}"></script> 
+
+<!-- main js --> 
+<script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+</html>
