@@ -6,9 +6,9 @@ Created on Fri Sep 27 14:36:49 2019
 """
 #**************** IMPORT PACKAGES ********************
 from flask import Flask, render_template, request, flash, redirect, url_for
+from alpha_vantage.timeseries import TimeSeries
 import pandas as pd
 import numpy as np
-from pandas import datetime
 from statsmodels.tsa.arima_model import ARIMA
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
@@ -24,8 +24,15 @@ from sklearn.linear_model import LinearRegression
 from textblob import TextBlob
 import constants as ct
 from Tweet import Tweet
+import nltk
+nltk.download('punkt')
+
+# Ignore Warnings
 import warnings
 warnings.filterwarnings("ignore")
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 #***************** FLASK *****************************
 app = Flask(__name__)
 
@@ -53,7 +60,6 @@ def insertintotable():
         df = pd.DataFrame(data=data)
         df.to_csv(''+quote+'.csv')
         if(df.empty):
-            from alpha_vantage.timeseries import TimeSeries
             ts = TimeSeries(key='N6A6QT6IBFJOPJ70',output_format='pandas')
             data, meta_data = ts.get_daily_adjusted(symbol='NSE:'+quote, outputsize='full')
             #Format df
@@ -86,13 +92,11 @@ def insertintotable():
             for t in range(len(test)):
                 model = ARIMA(history, order=(6,1 ,0))
                 model_fit = model.fit(disp=0)
-                #print(model_fit.summary())
                 output = model_fit.forecast()
                 yhat = output[0]
                 predictions.append(yhat[0])
                 obs = test[t]
                 history.append(obs)
-                #print('predicted=%f, expected=%f' % (yhat, obs))
             return predictions
         for company in uniqueVals[:10]:
             data=(df.loc[company,:]).reset_index()
@@ -102,18 +106,11 @@ def insertintotable():
             Quantity_date['Price'] = Quantity_date['Price'].map(lambda x: float(x))
             Quantity_date = Quantity_date.fillna(Quantity_date.bfill())
             Quantity_date = Quantity_date.drop(['Date'],axis =1)
-            #autocorrelation_plot(Quantity_date)
-            #print(company)
-            #plt.show()
-            print()
-            #print("Recent Trends in ",quote," Stock Prices: ")
-            print()
             fig = plt.figure(figsize=(7.2,4.8),dpi=65)
             plt.plot(Quantity_date)
             plt.savefig('static/Trends.png')
             plt.close(fig)
-            #plt.show()
-        
+            
             quantity = Quantity_date.values
             size = int(len(quantity) * 0.80)
             train, test = quantity[0:size], quantity[size:len(quantity)]
@@ -121,15 +118,12 @@ def insertintotable():
             predictions = arima_model(train, test)
             
             #plot graph
-            print()
-            #print("ARIMA model Accuracy: ")
             fig = plt.figure(figsize=(7.2,4.8),dpi=65)
             plt.plot(test,label='Actual Price')
             plt.plot(predictions,label='Predicted Price')
             plt.legend(loc=4)
             plt.savefig('static/ARIMA.png')
             plt.close(fig)
-            #plt.show()
             print()
             print("##############################################################################")
             arima_pred=predictions[-2]
@@ -138,7 +132,6 @@ def insertintotable():
             error_arima = math.sqrt(mean_squared_error(test, predictions))
             print("ARIMA RMSE:",error_arima)
             print("##############################################################################")
-            print()
             return arima_pred, error_arima
         
         
@@ -194,19 +187,19 @@ def insertintotable():
         #units=no. of neurons in layer
         #input_shape=(timesteps,no. of cols/features)
         #return_seq=True for sending recc memory. For last layer, retrun_seq=False since end of the line
-        regressor.add(Dropout(p=0.1))
+        regressor.add(Dropout(0.1))
         
         #Add 2nd LSTM layer
         regressor.add(LSTM(units=50,return_sequences=True))
-        regressor.add(Dropout(p=0.1))
+        regressor.add(Dropout(0.1))
         
         #Add 3rd LSTM layer
         regressor.add(LSTM(units=50,return_sequences=True))
-        regressor.add(Dropout(p=0.1))
+        regressor.add(Dropout(0.1))
         
         #Add 4th LSTM layer
         regressor.add(LSTM(units=50))
-        regressor.add(Dropout(p=0.1))
+        regressor.add(Dropout(0.1))
         
         #Add o/p layer
         regressor.add(Dense(units=1))
@@ -271,7 +264,6 @@ def insertintotable():
         print("Tomorrow's ",quote," Closing Price Prediction by LSTM: ",lstm_pred)
         print("LSTM RMSE:",error_lstm)
         print("##############################################################################")
-        print()
         return lstm_pred,error_lstm
     #***************** LINEAR REGRESSION SECTION ******************       
     def LIN_REG_ALGO(df):
@@ -334,7 +326,6 @@ def insertintotable():
         print("Tomorrow's ",quote," Closing Price Prediction by Linear Regression: ",lr_pred)
         print("Linear Regression RMSE:",error_lr)
         print("##############################################################################")
-        print()
         return df, lr_pred, forecast_set, mean, error_lr
     #**************** SENTIMENT ANALYSIS **************************
     def retrieving_tweets_polarity(symbol):
@@ -395,7 +386,6 @@ def insertintotable():
         print("##############################################################################")
         print("Positive Tweets :",pos,"Negative Tweets :",neg,"Neutral Tweets :",neutral)
         print("##############################################################################")
-        print()
         labels=['Positive','Negative','Neutral']
         sizes = [pos,neg,neutral]
         explode = (0, 0, 0)
@@ -413,14 +403,12 @@ def insertintotable():
             print("##############################################################################")
             print("Tweets Polarity: Overall Positive")
             print("##############################################################################")
-            print()
             tw_pol="Overall Positive"
         else:
             print()
             print("##############################################################################")
             print("Tweets Polarity: Overall Negative")
             print("##############################################################################")
-            print()
             tw_pol="Overall Negative"
         return global_polarity,tw_list,tw_pol,pos,neg,neutral
 
@@ -428,22 +416,18 @@ def insertintotable():
     def recommending(df, global_polarity,today_stock,mean):
         if today_stock.iloc[-1]['Close'] < mean:
             if global_polarity > 0:
-                print()
-                
                 idea="RISE"
                 decision="BUY"
                 print()
                 print("##############################################################################")
                 print("According to the ML Predictions and Sentiment Analysis of Tweets, a",idea,"in",quote,"stock is expected => ",decision)
             elif global_polarity < 0:
-                print()
                 idea="FALL"
                 decision="SELL"
                 print()
                 print("##############################################################################")
                 print("According to the ML Predictions and Sentiment Analysis of Tweets, a",idea,"in",quote,"stock is expected => ",decision)
         else:
-            print()
             idea="FALL"
             decision="SELL"
             print()
@@ -466,13 +450,11 @@ def insertintotable():
     
         #************** PREPROCESSUNG ***********************
         df = pd.read_csv(''+quote+'.csv')
-        print()
         print("##############################################################################")
         print("Today's",quote,"Stock Data: ")
         today_stock=df.iloc[-1:]
         print(today_stock)
         print("##############################################################################")
-        print()
         df = df.dropna()
         code_list=[]
         for i in range(0,len(df)):
@@ -485,13 +467,10 @@ def insertintotable():
         arima_pred, error_arima=ARIMA_ALGO(df)
         lstm_pred, error_lstm=LSTM_ALGO(df)
         df, lr_pred, forecast_set,mean,error_lr=LIN_REG_ALGO(df)
-        print()
-        #print("Recent %s related Tweets & News: " % quote)
         polarity,tw_list,tw_pol,pos,neg,neutral = retrieving_tweets_polarity(quote)
         
-        print()
-        #print("Generating recommendation based on prediction & polarity...")
         idea, decision=recommending(df, polarity,today_stock,mean)
+        print()
         print("Forecasted Prices for Next 7 days:")
         print(forecast_set)
         today_stock=today_stock.round(2)

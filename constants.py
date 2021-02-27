@@ -1,7 +1,7 @@
-consumer_key= 'E0pFYVai9VaOhqLiRBEC6gpGF'
-consumer_secret= 'XAMh4l9XL5nwFK3MN5tAjtXA2YgDN1tw5f7L2n6dz5ib8VYlbm'
+consumer_key= '7x7w8Ti8GmMtuhvj7IXBuvZmP'
+consumer_secret= 'kpFGcKiGxP9dJtlQzZ99p2OK9HM0IjA1I8n23N40VJyctOzvkG'
 
-access_token='3261604734-86c7DOJP98GwNeFWzvgPQKFUTyHn1ZFwlloJP3v'
-access_token_secret='eXEmlEAdxaFjueVP03jsAWeOeNMkI7ToiDQkyvLDa6eX7'
+access_token='1365544389498474497-97lzyZE9lroLNDzLhvW1dLS3MDKfV5'
+access_token_secret='8mF9CrBt4SvmewPZaapgL7kkh2iJus824SvhBJOvDpXlw'
 
 num_of_tweets = int(300)
