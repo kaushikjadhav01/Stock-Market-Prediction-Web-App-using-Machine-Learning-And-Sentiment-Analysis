@@ -377,7 +377,10 @@ def insertintotable():
                 
             tweet_list.append(Tweet(tw, polarity))
             count=count-1
-        global_polarity = global_polarity / len(tweet_list)
+        if len(tweet_list) != 0:
+            global_polarity = global_polarity / len(tweet_list)
+        else:
+            global_polarity = global_polarity
         neutral=ct.num_of_tweets-pos-neg
         if neutral<0:
         	neg=neg+neutral
