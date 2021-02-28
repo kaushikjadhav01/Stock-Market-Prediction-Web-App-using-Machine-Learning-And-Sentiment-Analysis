@@ -46,7 +46,8 @@ main.py - main machine learning module
 <li>Extract the above zip file in <b>xampp/htdocs</b> folder</li>
 <li>Go to command prompt, change directory to directory of repository and type <b>pip install -r requirements.txt</b></li>
 <li>To run app, type in command prompt, <b>python main.py</b></li>
-  <li>Open your web browser and go to <b>http://localhost/www</b> and click on the wordpress folders to access the web app</li>
+<li>Open your web browser and go to <b>http://localhost/www</b> and click on the wordpress folders to access the web app</li>
+<li>Wordpress Admin Panel is available at: <b>http://localhost/www/wordpress-5.6.2/wordpress/wp-admin</b></li>
 </ol>
 <br>
 <b>Video of setup and demo is available <a href="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/demo.mp4">here</a> </b>
