@@ -8,6 +8,7 @@
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner.png">
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner2.PNG">
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/11-resuts.png" width="750">
+<img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/wp-admin.PNG" width="750">
 Find more screenshots in the <b>screenshots folder</b> Or <a href="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/tree/master/screenshots">click here</a>
 
 # File and Directory Structure
@@ -50,9 +51,8 @@ main.py - main machine learning module
 <li>Wordpress Admin Panel is available at: <b>http://localhost/www/wordpress-5.6.2/wordpress/wp-admin</b></li>
 </ol>
 <br>
-<b>Video of setup and demo is available <a href="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/demo.mp4">here</a> </b>
+<B> Video of setup and demo is available <a href="https://drive.google.com/file/d/1iP5RqdlREx_YbP-5RZqo7fB1rElQ2igi/view?usp=sharing">here</a></b>
 <br>
-
 ## Admin Credentails
 **Username:** admin
 <br>
