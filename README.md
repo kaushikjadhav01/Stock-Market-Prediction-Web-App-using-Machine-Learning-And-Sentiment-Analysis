@@ -39,14 +39,23 @@ main.py - main machine learning module
 
 # How to Install and Use
 <ol>
-<li>Download and install <b>Wordpress</b> from https://wordpress.org/download/</li>
-<li>Once wordpress is installed, install <b>All In One WP Migration Plugin</b> on Wordpress</li>
-<li>Download my wordpress website file "localhost-wordpress-20200313-074610-uxz1wx (1).wpress" from <a href="https://drive.google.com/file/d/1aNrD43MVGyV3P2mg0JJ_JJSrM7G6G7gF/view?usp=sharing">here</a>
-<li>Once installed, go to the plugin and import the file "localhost-wordpress-20200313-074610-uxz1wx (1).wpress"</li>
+<li>Download and install <b>XAMPP server</b> from https://www.apachefriends.org/download.html and start <b>Apache</b> and <b>MySql</b> servers</li>
+<li>Open <b>phpmyadmin</b> by visiting http://localhost/phpmyadmin/ and create a database named <b>wordpress</b></li>
+<li>Select the wordpress database and click on <b>Import</b> and select the <b>wordpress.sql</b> file from the repo.</li> 
+<li>Download my wordpress website zip file from <a href="https://drive.google.com/file/d/1q1kdNBQyQTIIq9OuMuYBUgD3fni-oJQp/view?usp=sharing">here</a>
+<li>Extract the above zip file in <b>xampp/htdocs</b> folder</li>
 <li>Go to command prompt, change directory to directory of repository and type <b>pip install -r requirements.txt</b></li>
 <li>To run app, type in command prompt, <b>python main.py</b></li>
-<li>Open your web browser and go to http://localhost/wordpress to access the web app</li>
+  <li>Open your web browser and go to <b>http://localhost/www</b> and click on the wordpress folders to access the web app</li>
 </ol>
+<br>
+<b>Video of setup and demo is available at: </b>
+<br>
+
+## Admin Credentails
+**Username:** admin
+**Email:** stockmarketpred@gmail.com
+**Password:** Samplepass@123
 
 # Authors
 ## Kaushik Jadhav
