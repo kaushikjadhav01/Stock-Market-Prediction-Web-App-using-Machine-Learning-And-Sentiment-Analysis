@@ -39,9 +39,11 @@ main.py - main machine learning module
 </ul>
 
 # How to Install and Use
+<b>Python 3.8.5 is required for the python packages to install correctly</b><br>
 <ol>
 <li>Clone the repo. Download and install <b>XAMPP server</b> from https://www.apachefriends.org/download.html and start <b>Apache</b> and <b>MySql</b> servers</li>
-<li>Open <b>phpmyadmin</b> by visiting http://localhost/phpmyadmin/ and create a database named <b>wordpress</b></li>
+<li>Open <b>phpmyadmin</b> by visiting http://localhost/phpmyadmin/ and go to User Accounts -> Add a User, give username and password as <b>admin</b> and click on <b>Check All</b> next to Global Privileges and hit Go</li>
+<li>Next, create a new database named <b>wordpress</b></li>
 <li>Select the wordpress database and click on <b>Import</b> and select the <b>wordpress.sql</b> file from the repo.</li> 
 <li>Download my wordpress website zip file from <a href="https://drive.google.com/file/d/1q1kdNBQyQTIIq9OuMuYBUgD3fni-oJQp/view?usp=sharing">here</a>
 <li>Extract the above zip file in <b>xampp/htdocs</b> folder</li>
