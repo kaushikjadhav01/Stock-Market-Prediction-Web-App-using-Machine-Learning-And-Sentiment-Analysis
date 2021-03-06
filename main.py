@@ -331,7 +331,7 @@ def insertintotable():
     def retrieving_tweets_polarity(symbol):
         stock_ticker_map = pd.read_csv('Yahoo-Finance-Ticker-Symbols.csv')
         stock_full_form = stock_ticker_map[stock_ticker_map['Ticker']==symbol]
-        symbol = stock_full_form['Name'].to_list()[0][0:14]
+        symbol = stock_full_form['Name'].to_list()[0][0:12]
 
         auth = tweepy.OAuthHandler(ct.consumer_key, ct.consumer_secret)
         auth.set_access_token(ct.access_token, ct.access_token_secret)
