@@ -329,11 +329,15 @@ def insertintotable():
         return df, lr_pred, forecast_set, mean, error_lr
     #**************** SENTIMENT ANALYSIS **************************
     def retrieving_tweets_polarity(symbol):
+        stock_ticker_map = pd.read_csv('Yahoo-Finance-Ticker-Symbols.csv')
+        stock_full_form = stock_ticker_map[stock_ticker_map['Ticker']==symbol]
+        symbol = stock_full_form['Name'].to_list()[0][0:14]
+
         auth = tweepy.OAuthHandler(ct.consumer_key, ct.consumer_secret)
         auth.set_access_token(ct.access_token, ct.access_token_secret)
         user = tweepy.API(auth)
         
-        tweets = tweepy.Cursor(user.search, q=str(symbol), tweet_mode='extended', lang='en',exclude_replies=True).items(ct.num_of_tweets)
+        tweets = tweepy.Cursor(user.search, q=symbol, tweet_mode='extended', lang='en',exclude_replies=True).items(ct.num_of_tweets)
         
         tweet_list = [] #List of tweets alongside polarity
         global_polarity = 0 #Polarity of all tweets === Sum of polarities of individual tweets
@@ -424,7 +428,7 @@ def insertintotable():
                 print()
                 print("##############################################################################")
                 print("According to the ML Predictions and Sentiment Analysis of Tweets, a",idea,"in",quote,"stock is expected => ",decision)
-            elif global_polarity < 0:
+            elif global_polarity <= 0:
                 idea="FALL"
                 decision="SELL"
                 print()
