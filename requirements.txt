@@ -1,4 +1,4 @@
-tensorflow==2.4.1
+tensorflow==2.6.4
 nltk==3.5
 keras==2.4.3
 numpy==1.19.5
