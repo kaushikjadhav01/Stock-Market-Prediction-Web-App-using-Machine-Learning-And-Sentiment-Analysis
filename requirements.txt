@@ -1,7 +1,7 @@
 tensorflow==2.4.1
 nltk==3.5
 keras==2.4.3
-numpy==1.19.5
+numpy==1.22.0
 streamlit==0.52.1
 seaborn==0.11.1
 tweepy==3.10.0
