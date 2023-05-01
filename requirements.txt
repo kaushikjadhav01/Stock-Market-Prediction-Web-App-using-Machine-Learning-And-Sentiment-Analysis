@@ -6,7 +6,7 @@ streamlit==0.52.1
 seaborn==0.11.1
 tweepy==3.10.0
 textblob==0.15.3
-flask==1.1.2
+flask==2.3.2
 pandas==1.2.2
 matplotlib==3.2
 scikit_learn==0.24.1
