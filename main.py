@@ -9,7 +9,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 from alpha_vantage.timeseries import TimeSeries
 import pandas as pd
 import numpy as np
-from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -91,10 +91,10 @@ def insertintotable():
             predictions = list()
             for t in range(len(test)):
                 model = ARIMA(history, order=(6,1 ,0))
-                model_fit = model.fit(disp=0)
+                model_fit = model.fit()
                 output = model_fit.forecast()
                 yhat = output[0]
-                predictions.append(yhat[0])
+                predictions.append(yhat)
                 obs = test[t]
                 history.append(obs)
             return predictions
@@ -337,7 +337,7 @@ def insertintotable():
         auth.set_access_token(ct.access_token, ct.access_token_secret)
         user = tweepy.API(auth)
         
-        tweets = tweepy.Cursor(user.search, q=symbol, tweet_mode='extended', lang='en',exclude_replies=True).items(ct.num_of_tweets)
+        tweets = tweepy.Cursor(user.search_tweets, q=symbol, tweet_mode='extended', lang='en',exclude_replies=True).items(ct.num_of_tweets)
         
         tweet_list = [] #List of tweets alongside polarity
         global_polarity = 0 #Polarity of all tweets === Sum of polarities of individual tweets
@@ -474,7 +474,9 @@ def insertintotable():
         arima_pred, error_arima=ARIMA_ALGO(df)
         lstm_pred, error_lstm=LSTM_ALGO(df)
         df, lr_pred, forecast_set,mean,error_lr=LIN_REG_ALGO(df)
-        polarity,tw_list,tw_pol,pos,neg,neutral = retrieving_tweets_polarity(quote)
+        # Twitter Lookup is no longer free in Twitter's v2 API
+        # polarity,tw_list,tw_pol,pos,neg,neutral = retrieving_tweets_polarity(quote)
+        polarity, tw_list, tw_pol, pos, neg, neutral = 0, [], "Can't fetch tweets, Twitter Lookup is no longer free in API v2.", 0, 0, 0
         
         idea, decision=recommending(df, polarity,today_stock,mean)
         print()

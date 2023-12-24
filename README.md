@@ -39,7 +39,7 @@ main.py - main machine learning module
 </ul>
 
 # How to Install and Use
-<b>Python 3.8.5 is required for the python packages to install correctly</b><br>
+<b>Python 3.10.6 is required for the python packages to install correctly</b><br>
 <ol>
 <li>Clone the repo. Download and install <b>XAMPP server</b> from https://www.apachefriends.org/download.html and start <b>Apache</b> and <b>MySql</b> servers</li>
 <li>Open <b>phpmyadmin</b> by visiting http://localhost/phpmyadmin/ and go to User Accounts -> Add a User, give username and password as <b>admin</b> and click on <b>Check All</b> next to Global Privileges and hit Go</li>
