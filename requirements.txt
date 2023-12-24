@@ -10,7 +10,7 @@ flask==1.1.2
 pandas==1.2.2
 matplotlib==3.2
 scikit_learn==0.24.1
-statsmodels==0.12.2
+statsmodels
 yfinance==0.1.54
 alpha_vantage==2.3.1
 https://pypi.anaconda.org/berber/simple/tweet-preprocessor/0.5.0/tweet-preprocessor-0.5.0.tar.gz
