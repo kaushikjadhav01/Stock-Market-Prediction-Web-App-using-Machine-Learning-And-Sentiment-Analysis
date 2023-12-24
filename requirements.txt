@@ -7,7 +7,7 @@ tweepy==3.10.0
 textblob==0.15.3
 flask==1.1.2
 pandas
-matplotlib==3.2
+matplotlib
 scikit_learn
 statsmodels
 yfinance==0.1.54
