@@ -46,6 +46,7 @@ Password: Samplepass@123 <br/>
 There are two roles in the system: **Admin** and **User**.<br/><br/>
 Users can:<br/>
 <ol>
+    <li>Register and Login </li>
     <li>Check Real Time stock prices</li>
     <li>Read recent news about different stocks</li>
     <li>Currency Converter</li>
@@ -59,6 +60,7 @@ Admin can:<br/>
 <ol>
     <li>Create, Retrieve, Update Delete Users.</li>
     <li>Manually trigger emails.</li>
+    <li>Register and Login </li>
     <li>Check Real Time stock prices</li>
     <li>Read recent news about different stocks</li>
     <li>Currency Converter</li>
