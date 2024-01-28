@@ -32,7 +32,8 @@
 
 ## System Description and Functions
 **Demo Video:** <br/>
-[<img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner.png" width="50%">](https://www.youtube.com/watch?v=xnq7mBdJAJk "Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis")<br/>
+[<img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner.png">](https://www.youtube.com/watch?v=xnq7mBdJAJk "Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis")<br/><br/>
+**Screenshots:** <br/>
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner.png">
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/banner2.PNG">
 <img src="https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis/blob/master/screenshots/11-resuts.png" width="750">
